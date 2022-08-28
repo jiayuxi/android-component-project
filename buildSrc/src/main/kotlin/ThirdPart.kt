@@ -18,10 +18,14 @@ object ThirdPart {
         const val convertScalars = "com.squareup.retrofit2:converter-scalars:$RETROFIT_VERSION"
 
         //
-        const val adapter = "com.squareup.retrofit2:adapter-rxjava3:$RETROFIT_VERSION"
-
-        const val adapterRxjava2 = "com.squareup.retrofit2:adapter-rxjava2:3.0.4"
         const val adapterRxjava3 = "com.squareup.retrofit2:adapter-rxjava3:3.0.0"
+
+    }
+
+    object RxJava3 {
+        // rxJava3
+        const val rxJava = "io.reactivex.rxjava3:rxjava:3.0.4"
+        const val rxAndroid = "io.reactivex.rxjava3:rxandroid:3.0.0"
     }
 
     object OkHttp {
@@ -87,7 +91,7 @@ object ThirdPart {
 
     /*******************************依赖注入***********************************/
     //轮播图
-    const val bannerVp = "com.github.zhpanvip:BannerViewPager:3.1.5"
+    const val bannerVp = "com.github.zhpanvip:bannerviewpager:3.5.6"
 
     //状态栏
     const val immersionBarKtx = "com.gyf.immersionbar:immersionbar-ktx:3.0.0"
@@ -97,7 +101,7 @@ object ThirdPart {
     const val refreshHeader = "com.scwang.smart:refresh-header-classics:2.0.1"
 
     //RecycleView适配器工具
-    const val baseRecycleViewHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
+    const val baseRecycleViewHelper = "io.github.cymchad:BaseRecyclerViewAdapterHelper:4.0.0-beta01"
 
     //带侧滑菜单的列表
     const val xRecycleView = "com.yanzhenjie.recyclerview:x:1.3.2"
@@ -119,13 +123,6 @@ object ThirdPart {
 
     // MMKV
     const val mmkv = "com.tencent:mmkv:1.2.14"
-
-    //rxjava2配合RxAndroid
-    const val rxjava2 = "io.reactivex.rxjava2:rxjava:2.2.21"
-    const val rxAndroid = "io.reactivex.rxjava2:rxandroid:2.1.1"
-    //rxjava3配合RxAndroid
-    /*const val rxjava3 = "io.reactivex.rxjava3:rxjava:3.0.13"
-    const val rxAndroid3 = "io.reactivex.rxjava3:rxandroid:3.0.0"*/
 
     //腾讯bug上报收集
     const val bugly = "com.tencent.bugly:crashreport_upgrade:latest.release"

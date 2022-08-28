@@ -1,7 +1,8 @@
-package com.jiayx.component.project
+package com.jiayx.component.project.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jiayx.component.project.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -48,6 +48,7 @@ dependencies {
     // appcompat
     implementation(AndroidX.appcompat)
     implementation(AndroidX.appcompatResources)
+    implementation(AndroidX.startup)
     // 测试
     testImplementation (Testing.testJunit)
     androidTestImplementation (Testing.androidJunit)
