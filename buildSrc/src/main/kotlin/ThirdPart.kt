@@ -18,7 +18,7 @@ object ThirdPart {
         const val convertScalars = "com.squareup.retrofit2:converter-scalars:$RETROFIT_VERSION"
 
         //
-        const val adapterRxjava3 = "com.squareup.retrofit2:adapter-rxjava3:3.0.0"
+        const val  adapterRxjava3 = "com.squareup.retrofit2:adapter-rxjava3:3.0.0"
 
     }
 

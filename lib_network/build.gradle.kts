@@ -43,7 +43,6 @@ dependencies {
     //
     implementation(ThirdPart.Retrofit.retrofit)
     implementation(ThirdPart.Retrofit.convertGson)
-    implementation(ThirdPart.Retrofit.adapterRxjava3)
     //
     implementation(ThirdPart.RxJava3.rxJava)
     implementation(ThirdPart.RxJava3.rxAndroid)

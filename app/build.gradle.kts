@@ -5,26 +5,39 @@ plugins {
     id("kotlin-parcelize")
 }
 
-android{
+android {
     compileSdk = VersionConfig.compileSdk
-    defaultConfig{
+    defaultConfig {
         applicationId = VersionConfig.applicationId
-        minSdk= VersionConfig.minSdk
+        minSdk = VersionConfig.minSdk
         targetSdk = VersionConfig.targetSdk
         versionCode = VersionConfig.versionCode
         versionName = VersionConfig.versionName
         testInstrumentationRunner = VersionConfig.testInstrumentationRunner
         multiDexEnabled = true
+        flavorDimensions.add("default")
         ndk {
             //不配置则默认构建并打包所有可用的ABI
             //same with gradle-> abiFilters 'x86_64','armeabi-v7a','arm64-v8a'
             abiFilters.addAll(arrayListOf("armeabi-v7a"))
         }
     }
-
+    signingConfigs {
+        create("release") {
+            storeFile = file(VersionConfig.SigningConfig.KEYSTORE_FILE)
+            storePassword = VersionConfig.SigningConfig.STORE_PASSWORD
+            keyAlias = VersionConfig.SigningConfig.KEY_ALIAS
+            keyPassword = VersionConfig.SigningConfig.KEY_PASSWORD
+        }
+    }
     buildTypes {
+        getByName("debug") {
+            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
+        }
         getByName("release") {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
@@ -35,22 +48,42 @@ android{
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget =  "1.8"
+        jvmTarget = "1.8"
     }
     buildFeatures {
         dataBinding = true
         viewBinding = true
     }
+    productFlavors {
+        create("ComponentTest") {
+            dimension = "default"
+        }
+        create("ComponentProduct") {
+            dimension = "default"
+        }
+    }
+    android.applicationVariants.all {
+        val buildTypeName = this.buildType.name
+        outputs.all {
+            if (this is com.android.build.gradle.internal.api.ApkVariantOutputImpl) {
+                this.outputFileName =
+                    "Component_v${defaultConfig.versionName}_${VersionConfig.date}_${buildTypeName}.apk"
+            }
+        }
+    }
+    // XML资源文件防重名冲突，规定资源文件必须要以指定名称作为前缀命名
+    resourcePrefix = "app_"
 }
 
 dependencies {
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
+    implementation(project(mapOf("path" to ":lib_common")))
     // appcompat
     implementation(AndroidX.appcompat)
     implementation(AndroidX.appcompatResources)
     implementation(AndroidX.startup)
     // 测试
-    testImplementation (Testing.testJunit)
-    androidTestImplementation (Testing.androidJunit)
-    androidTestImplementation (Testing.espresso)
+    testImplementation(Testing.testJunit)
+    androidTestImplementation(Testing.androidJunit)
+    androidTestImplementation(Testing.espresso)
 }
