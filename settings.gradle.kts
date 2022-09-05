@@ -26,3 +26,4 @@ rootProject.name = "android-component-project"
 include(":app")
 include(":lib_network")
 include(":lib_common")
+include(":module_map")

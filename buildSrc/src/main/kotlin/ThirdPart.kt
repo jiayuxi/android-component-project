@@ -18,7 +18,7 @@ object ThirdPart {
         const val convertScalars = "com.squareup.retrofit2:converter-scalars:$RETROFIT_VERSION"
 
         //
-        const val  adapterRxjava3 = "com.squareup.retrofit2:adapter-rxjava3:3.0.0"
+        const val adapterRxjava3 = "com.squareup.retrofit2:adapter-rxjava3:3.0.0"
 
     }
 
@@ -90,6 +90,12 @@ object ThirdPart {
     }
 
     /*******************************依赖注入***********************************/
+
+    object Map {
+        const val navi_3dmap = "com.amap.api:navi-3dmap:latest.integration"
+        const val location = "compile 'com.amap.api:location:latest.integration"
+    }
+
     //轮播图
     const val bannerVp = "com.github.zhpanvip:bannerviewpager:3.5.6"
 

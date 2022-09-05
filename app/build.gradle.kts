@@ -71,8 +71,6 @@ android {
             }
         }
     }
-    // XML资源文件防重名冲突，规定资源文件必须要以指定名称作为前缀命名
-    resourcePrefix = "app_"
 }
 
 dependencies {
