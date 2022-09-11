@@ -94,6 +94,7 @@ object ThirdPart {
     object Map {
         const val navi_3dmap = "com.amap.api:navi-3dmap:latest.integration"
         const val location = "compile 'com.amap.api:location:latest.integration"
+        const val searchLocation = "com.amap.api:search:latest.integration"
     }
 
     //轮播图

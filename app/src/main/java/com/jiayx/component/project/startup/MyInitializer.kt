@@ -2,6 +2,7 @@ package com.jiayx.component.project.startup
 
 import android.content.Context
 import androidx.startup.Initializer
+import com.tencent.mmkv.MMKV
 
 /**
  *  author : Jia yu xi
@@ -10,7 +11,7 @@ import androidx.startup.Initializer
  */
 class MyInitializer : Initializer<Unit> {
     override fun create(context: Context) {
-
+        MMKV.initialize(context)
     }
 
     override fun dependencies(): List<Class<out Initializer<*>>> {

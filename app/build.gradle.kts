@@ -76,6 +76,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     implementation(project(mapOf("path" to ":lib_common")))
+    implementation(project(mapOf("path" to ":lib_network")))
     // appcompat
     implementation(AndroidX.appcompat)
     implementation(AndroidX.appcompatResources)
