@@ -143,12 +143,16 @@ object ThirdPart {
 
     //Replaying share
     const val rxjavaReplayingShare = "com.jakewharton.rx2:replaying-share:2.2.0"
-
-    //ARouter
-    const val aRouter = "com.alibaba:arouter-api:1.5.2"
-    const val aRouterCompiler = "com.alibaba:arouter-compiler:1.5.2"
-
     //Android-Iconics
     const val iconCore = "com.mikepenz:iconics-core:5.3.1"
+
+    object ARoute {
+        const val api = "com.alibaba:arouter-api:1.5.2"
+
+        //kapt
+        const val compiler = "com.alibaba:arouter-compiler:1.5.2"
+    }
+    //
+    const val fragivity = "com.github.vitaviva.fragivity:core:0.3.1"
 
 }

@@ -99,6 +99,12 @@ dependencies {
     api(ThirdPart.mmkv)
     //
     api(ThirdPart.utilCodex)
+    // Aroute
+    api(ThirdPart.ARoute.api)
+    //
+    api(ThirdPart.fragivity)
+
+    api(project("path" to ":lib_navigation"))
 
     testImplementation(Testing.testJunit)
     androidTestImplementation(Testing.androidJunit)

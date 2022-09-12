@@ -21,7 +21,13 @@ android {
             //same with gradle-> abiFilters 'x86_64','armeabi-v7a','arm64-v8a'
             abiFilters.addAll(arrayListOf("armeabi-v7a"))
         }
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
     }
+
     signingConfigs {
         create("release") {
             storeFile = file(VersionConfig.SigningConfig.KEYSTORE_FILE)
@@ -77,10 +83,13 @@ dependencies {
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     implementation(project(mapOf("path" to ":lib_common")))
     implementation(project(mapOf("path" to ":lib_network")))
+    implementation(project(mapOf("path" to ":module_login")))
     // appcompat
     implementation(AndroidX.appcompat)
     implementation(AndroidX.appcompatResources)
     implementation(AndroidX.startup)
+    //
+    kapt(ThirdPart.ARoute.compiler)
     // 测试
     testImplementation(Testing.testJunit)
     androidTestImplementation(Testing.androidJunit)
