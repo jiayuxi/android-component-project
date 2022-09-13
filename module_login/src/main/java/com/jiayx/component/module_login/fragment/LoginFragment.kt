@@ -5,7 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.github.fragivity.navigator
+import com.github.fragivity.push
+import com.jiayx.component.lib_common.R
 import com.jiayx.component.module_login.databinding.LoginFragmentBinding
+import com.jiayx.component.module_map.fragment.MapFragment
 
 /**
  *  author : Jia yu xi
@@ -25,5 +29,17 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            loginText.setOnClickListener {
+                navigator.push(MapFragment::class) {
+                    //animator
+                    enterAnim = R.anim.slide_in
+                    exitAnim = R.anim.slide_out
+                    popEnterAnim = R.anim.slide_in_pop
+                    popExitAnim = R.anim.slide_out_pop
+                }
+            }
+        }
     }
 }

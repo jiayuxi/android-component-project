@@ -29,6 +29,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 // XML资源文件防重名冲突，规定资源文件必须要以指定名称作为前缀命名
     resourcePrefix = "module_map_"
 }
@@ -38,9 +42,10 @@ dependencies {
     implementation(AndroidX.coreKtx)
     implementation(AndroidX.appcompat)
     implementation(Google.material)
-//    api(ThirdPart.Map.navi_3dmap)
-//    api(ThirdPart.Map.location)
-//    api(ThirdPart.Map.searchLocation)
+    api(ThirdPart.Map.navi_3dmap)
+    api(ThirdPart.Map.location)
+    api(ThirdPart.Map.searchLocation)
+    implementation(project(mapOf("path" to ":lib_common")))
     testImplementation(Testing.testJunit)
     androidTestImplementation(Testing.androidJunit)
     androidTestImplementation(Testing.espresso)

@@ -80,10 +80,12 @@ android {
 }
 
 dependencies {
+    // 引用 jar 和 libs
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
     implementation(project(mapOf("path" to ":lib_common")))
     implementation(project(mapOf("path" to ":lib_network")))
     implementation(project(mapOf("path" to ":module_login")))
+    implementation(project(mapOf("path" to ":module_map")))
     // appcompat
     implementation(AndroidX.appcompat)
     implementation(AndroidX.appcompatResources)
