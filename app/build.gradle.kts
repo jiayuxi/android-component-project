@@ -86,6 +86,7 @@ dependencies {
     implementation(project(mapOf("path" to ":lib_network")))
     implementation(project(mapOf("path" to ":module_login")))
     implementation(project(mapOf("path" to ":module_map")))
+    implementation(project(mapOf("path" to ":lib_mediarecorder")))
     // appcompat
     implementation(AndroidX.appcompat)
     implementation(AndroidX.appcompatResources)

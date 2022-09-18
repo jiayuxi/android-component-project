@@ -103,6 +103,9 @@ dependencies {
     api(ThirdPart.ARoute.api)
     //
     api(ThirdPart.fragivity)
+    //
+    api(ThirdPart.Permission.rxPermission)
+    api(ThirdPart.Permission.xxPermission)
 
     api(project("path" to ":lib_navigation"))
 
