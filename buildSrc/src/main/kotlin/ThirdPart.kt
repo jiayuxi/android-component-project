@@ -155,4 +155,7 @@ object ThirdPart {
     //
     const val fragivity = "com.github.vitaviva.fragivity:core:0.3.1"
 
+    // cameraView
+    const val cameraView = "com.otaliastudios:cameraview:2.7.2"
+
 }

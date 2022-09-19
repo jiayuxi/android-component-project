@@ -104,6 +104,8 @@ dependencies {
     //
     api(ThirdPart.fragivity)
     //
+    api(ThirdPart.cameraView)
+    //
     api(ThirdPart.Permission.rxPermission)
     api(ThirdPart.Permission.xxPermission)
 
