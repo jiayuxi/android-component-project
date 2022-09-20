@@ -30,8 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    // XML资源文件防重名冲突，规定资源文件必须要以指定名称作为前缀命名
-    resourcePrefix = "lib_common_"
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -39,6 +41,7 @@ dependencies {
     implementation(AndroidX.coreKtx)
     implementation(Kotlin.Coroutine.core)
     implementation(Kotlin.Coroutine.coreAndroid)
+    implementation(project(mapOf("path" to ":lib_common")))
     testImplementation(Testing.testJunit)
     androidTestImplementation(Testing.testJunit)
     androidTestImplementation(Testing.espresso)

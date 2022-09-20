@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 //            .findFragmentById(R.id.nav_host) as NavHostFragment
 //        navHostFragment.loadRoot(LoginFragment::class)
         findViewById<Button>(R.id.startRecord).setOnClickListener {
-            startActivity(Intent(this, MedioRecorderCamera1Activity::class.java))
+            startActivity(Intent(this, CameraActivity::class.java))
         }
         applyPermission()
     }

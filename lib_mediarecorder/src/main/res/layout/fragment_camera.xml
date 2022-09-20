@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/startRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="录像"
+            android:textSize="20dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/stopRecord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止录像"
+            android:textSize="20dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraViewTake"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:keepScreenOn="true"
+        app:cameraAudio="on"
+        app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+        app:cameraEngine="camera2"
+        app:cameraExperimental="true"
+        app:cameraFacing="back"
+        app:cameraFlash="auto"
+        app:cameraGestureLongTap="none"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="filterControl1"
+        app:cameraGestureScrollVertical="exposureCorrection"
+        app:cameraGestureTap="autoFocus"
+        app:cameraMode="video"
+        app:cameraPlaySounds="true"
+        app:cameraPreview="glSurface"
+        app:cameraPreviewFrameRate="45"
+        app:cameraPreviewFrameRateExact="true"
+        app:cameraSnapshotMaxHeight="1920"
+        app:cameraSnapshotMaxWidth="1080"
+        app:cameraUseDeviceOrientation="false"
+        app:cameraVideoCodec="h264"
+        app:cameraVideoSizeMaxHeight="1920"
+        app:cameraVideoSizeMaxWidth="1080" />
+    <com.otaliastudios.cameraview.CameraView
+        android:id="@+id/cameraFrontViewTake"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:keepScreenOn="true"
+        app:cameraAudio="on"
+        app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+        app:cameraEngine="camera2"
+        app:cameraExperimental="true"
+        app:cameraFacing="front"
+        app:cameraFlash="auto"
+        app:cameraGestureLongTap="none"
+        app:cameraGesturePinch="zoom"
+        app:cameraGestureScrollHorizontal="filterControl1"
+        app:cameraGestureScrollVertical="exposureCorrection"
+        app:cameraGestureTap="autoFocus"
+        app:cameraMode="video"
+        app:cameraPlaySounds="true"
+        app:cameraPreview="glSurface"
+        app:cameraPreviewFrameRate="45"
+        app:cameraPreviewFrameRateExact="true"
+        app:cameraSnapshotMaxHeight="1920"
+        app:cameraSnapshotMaxWidth="1080"
+        app:cameraUseDeviceOrientation="false"
+        app:cameraVideoCodec="h264"
+        app:cameraVideoSizeMaxHeight="1920"
+        app:cameraVideoSizeMaxWidth="1080" />
+</androidx.appcompat.widget.LinearLayoutCompat>
